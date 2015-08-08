@@ -1,0 +1,9 @@
+{% extends "index.html"%}
+
+{% block content %}
+	<h2>通知列表</h2>
+	<a href="/noticeEdit"><button>发布新通知</button></a>
+	{% for notification in notifications %}
+		{% module Notification(notification) %}
+	{%end%}
+{% end %}

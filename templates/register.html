@@ -1,0 +1,50 @@
+{% extends 'main.html'%}
+
+{% block content %}
+<h2 class='text-danger'>国防生注册</h2>
+<script src="{{static_url('js/checkpw.js')}}"></script>
+<form method='post' action="/register" class='well'>
+	<div class='form-group'>
+		<lable>学号</lable>
+		<input type='text' name='id' class='form-control'/>
+	</div>
+	<div class='form-group'>
+		<lable>姓名</lable>
+		<input type='text' name='name' class='form-control'/>
+	</div>
+	<div class='form-group'>
+		<lable>密码</lable>
+		<input type='password' name='password' class='form-control' />
+	</div>
+	<div class='form-group'>
+		<lable>确认密码</lable>
+		<input type='password' name='password2' class='form-control' />
+	</div>
+	<div class='form-group'>
+		<lable>中队</lable>
+		<input type='text' name='team' class='form-control' placeholder="team_1/team_2/team_3/team_4"/>
+	</div>
+	<div class='form-group'>
+		<lable>区队</lable>
+		<input type='text' name='subTeam' class='form-control' placeholder="subTeam_1/subTeam_2/subTeam_3/subTeam_4"/>
+	</div>
+	<div class='form-group'>
+		<lable>班</lable>
+		<input type='text' name='class' class='form-control' placeholder="class_1/class_2/class_3/class_4"/>
+	</div>
+	<div class='form-group'>
+		<lable>职务级别</lable>
+		<input type='text' name='priority' class='form-control' placeholder="1/2/3/4/5"/>
+	</div>
+	<div class='form-group'>
+		<lable>Email</lable>
+		<input type='text' name='email' class='form-control'/>
+	</div>
+		<div class='form-group'>
+		<lable>Phone-Call</lable>
+		<input type='text' name='phone' class='form-control'/>
+	</div>
+	<button type='submit' onclick='return checkpw()' class='btn btn-primary'>注册</button>
+	<a href='/'>已有账号，直接登录</a>
+</form>
+{% end %}

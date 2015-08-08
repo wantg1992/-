@@ -1,0 +1,9 @@
+{% extends 'index.html'%}
+{%block content%}
+<ul>
+	{% for i in members %}
+	<li><a href='/members/{{i["name"]}}' class='text-success h4'>{{i["name"]}}</a><span>[{{i['id']}}]</span></li>
+	{% end %}
+	<br/>
+</ul>
+{%end%}

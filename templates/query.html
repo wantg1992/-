@@ -1,0 +1,35 @@
+{% extends 'index.html'%}
+{% block content %}
+<form method='post' class='well'>
+<div class='form-group'> 
+	<label><input name="personal" type="checkbox" />基本信息</label>
+	<label><input name="disobediences" type="checkbox" />违纪记录</label>
+	<label><input name="grades" type="checkbox" />考核成绩</label>
+	<input type='text' name='id' class='form-control' placeholder='学号' /><br/>
+ </div>  
+<button type='submit' class='btn btn-success'>查询</button>
+</form>
+
+{% if personal['queryFlag'] == "true" %}
+<h3> Personal Information</h3>
+<p>name:{{personal['name']}}</p>
+<p>id:{{personal['id']}}</p>
+<p>email:{{personal['email']}}</p>
+<p>phone:{{personal['phone']}}</p>
+{% end %}
+
+{% if grades %}
+	<h3> Grades </h3>
+	{% for grade in grades %}
+		{% module Grade(grade) %}
+	{%end%}
+{% end %}
+
+{% if disobediences %}
+	<h3> Disobediences </h3>
+	{% for disobedience in disobediences %}
+		{% module Disobedience(disobedience) %}
+	{%end%}
+{% end %}
+
+{% end %}
